@@ -1,5 +1,9 @@
 
 const mainPage = document.getElementById('mainPage')
+const movieDescription = document.getElementById('movieDescription')
+const backBtn = document.getElementById('backBtn')
+
+backBtn.addEventListener('click', backToList)
 
 let movies = [
     {
@@ -66,7 +70,6 @@ let movies = [
         }]
     }
 ]
-cardID = 0
 
 showCards()
 
@@ -101,5 +104,20 @@ function showCards() {
         movieCard.appendChild(title)
         movieCard.appendChild(year)
         movieCard.appendChild(rating)
+
+        title.addEventListener('click', openMovie)
     })
+}
+
+function openMovie(event){
+    mainPage.style.display = 'none'
+    movieDescription.style.display = 'block'
+
+    console.log(event)
+
+}
+function backToList(){
+    mainPage.style.display = 'flex'
+    movieDescription.style.display = 'none'
+    showCards()
 }

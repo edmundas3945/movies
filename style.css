@@ -4,6 +4,10 @@ body {
     margin: 0;
     text-align: center;
 }
+.top {
+    width: 100%;
+    font-family: 'Suez One', serif;
+}
 #mainPage {
     padding: 30px;
     display: flex;
@@ -11,15 +15,13 @@ body {
     justify-content: center;
 }
 .movieCard {
-    background-color: #6e6e6e;
+    background-color: #c0c0c0;
     width: 240px;
-    cursor: pointer;
     color: #990819;
     padding: 15px;
     border-radius: 15px;
     margin: 15px;
 }
-
 .border {
     border-radius: 9px;
 }
@@ -28,10 +30,42 @@ body {
 }
 .title {
     font-family: 'Suez One', serif;
+    cursor: pointer;
 }
 .title:hover {
-    color: white;
+    color: #2e0232;
 }
 .year {
     margin: 6px;
+}
+/*movieDescription*/
+#movieDescription {
+    display: none;
+    padding: 30px 90px;
+    justify-content: center;
+}
+#backBtn {
+    padding: 9px;
+    border-radius: 9px;
+    background-color: #990819;
+    color: white;
+    cursor: pointer;
+    transition: 1s;
+}
+#backBtn:hover {
+    background-color: #399f28;
+}
+.flex {
+    display: flex;
+}
+.descriptionBox {
+    padding: 0 60px;
+    text-align: left;
+}
+.descriptionTitle {
+    font-size: 45px;
+    margin-top: 0;
+}
+.description {
+    font-size: 21px;
 }
