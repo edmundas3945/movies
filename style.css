@@ -1,0 +1,37 @@
+
+body {
+    background-color: goldenrod;
+    margin: 0;
+    text-align: center;
+}
+#mainPage {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movieCard {
+    background-color: #6e6e6e;
+    width: 240px;
+    cursor: pointer;
+    color: #990819;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.border {
+    border-radius: 9px;
+}
+.movieCard img {
+    width: 210px;
+}
+.title {
+    font-family: 'Suez One', serif;
+}
+.title:hover {
+    color: white;
+}
+.year {
+    margin: 6px;
+}
