@@ -96,3 +96,18 @@ body {
     width: 21%;
     text-align: right;
 }
+.authorAndClose {
+    display: flex;
+    justify-content: space-between;
+}
+.close {
+    padding: 3px;
+    border-radius: 3px;
+    background-color: darkslateblue;
+    cursor: pointer;
+    color: white;
+}
+.close:hover {
+    background-color: red;
+    color: black;
+}

@@ -76,6 +76,7 @@ let movies = [
 let name = ''
 let comment = ''
 let eventID
+let comID = 0
 
 showCards()
 
@@ -128,6 +129,7 @@ function openMovie(event){
 
     mainPage.style.display = 'none'
     movieDescription.style.display = 'block'
+    console.log(event)
     generateHTML(event.target.id)
 
 }
@@ -141,7 +143,6 @@ function fInputCom(event){
 }
 
 function submitCom(event){
-    eventID = event.target.id
     console.log(name, comment)
     movies.map(item => {
         if(event.target.id === item.id){
@@ -192,22 +193,34 @@ function generateHTML(id){
              comSection.classList.add('comSection')
 
              item.comments.map(el => {
-
+                 comID++
                  let commentBox = document.createElement('div')
                  commentBox.classList.add('commentBox')
-                 commentBox.setAttribute('id', 'item.id')
+                 commentBox.setAttribute('id', comID)
+
+                 let authorAndXBox = document.createElement('div')
+                 authorAndXBox.classList.add('authorAndClose')
+                 authorAndXBox.style.padding = '0 3px 0 0'
 
                  let commentAuthor = document.createElement('div')
                  commentAuthor.innerText = `${el.name}:`
                  commentAuthor.classList.add('commentAuthor')
+
+                 let close = document.createElement('div')
+                 close.innerHTML = 'remove'
+                 close.classList.add('close')
 
                  let comment = document.createElement('div')
                  comment.innerText = el.comment
                  comment.classList.add('comment')
 
                  comSection.appendChild(commentBox)
-                 commentBox.appendChild(commentAuthor)
+                 commentBox.appendChild(authorAndXBox)
+                 authorAndXBox.appendChild(commentAuthor)
+                 authorAndXBox.appendChild(close)
                  commentBox.appendChild(comment)
+
+                 close.addEventListener('click', closeComment)
              })
 
              let inputBox = document.createElement('div')
@@ -265,3 +278,13 @@ function generateHTML(id){
          }
      })
  }
+
+function closeComment(event) {
+    eventID = event.target.id
+    movies.map(item => {
+        if(eventID === item.id){
+            item.comments = item.comments.filter(x => x.id !== event.target.id)
+        }
+    })
+    generateHTML(eventID)
+}
