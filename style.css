@@ -17,7 +17,7 @@ body {
 .movieCard {
     background-color: #c0c0c0;
     width: 240px;
-    color: #990819;
+    color: black;
     padding: 15px;
     border-radius: 15px;
     margin: 15px;
@@ -31,9 +31,10 @@ body {
 .title {
     font-family: 'Suez One', serif;
     cursor: pointer;
+    margin-bottom: 9px;
 }
 .title:hover {
-    color: #2e0232;
+    color: #990819;
 }
 .year {
     margin: 6px;
@@ -43,29 +44,55 @@ body {
     display: none;
     padding: 30px 90px;
     justify-content: center;
+    width: 66%;
+    margin: auto;
 }
-#backBtn {
+.backBtn {
     padding: 9px;
     border-radius: 9px;
     background-color: #990819;
     color: white;
     cursor: pointer;
     transition: 1s;
+    margin-bottom: 9px;
 }
-#backBtn:hover {
+.backBtn:hover {
     background-color: #399f28;
 }
 .flex {
     display: flex;
 }
 .descriptionBox {
-    padding: 0 60px;
+    padding: 0 0 0 30px;
     text-align: left;
 }
 .descriptionTitle {
     font-size: 45px;
-    margin-top: 0;
+    margin: 0 0 15px 0;
 }
 .description {
     font-size: 21px;
+}
+/*comment section*/
+.comSection {
+    margin: auto;
+    width: 100%;
+}
+.commentBox {
+    background-color: white;
+    margin: 6px;
+    justify-content: center;
+    flex-direction: column;
+}
+.commentAuthor {
+    text-align: left;
+    padding: 3px;
+}
+.comment {
+    text-align: left;
+    padding: 3px;
+}
+.smth {
+    width: 21%;
+    text-align: right;
 }
